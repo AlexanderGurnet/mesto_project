@@ -1,0 +1,15 @@
+.popup__button_add-card {
+  font-size: 36px;
+  color: white;
+  border: 1px solid rgba(0, 0, 0, .2);
+  background-color: black;
+}
+
+
+.popup__button_add-card:disabled {
+  pointer-events: none;
+  font-size: 36px;
+  color: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, .2);
+  background-color: transparent;
+}

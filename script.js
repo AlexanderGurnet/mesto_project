@@ -146,17 +146,21 @@ function deleteCard(event) {
     event.currentTarget.removeChild(event.target.closest('.card-wrap'));  
 }
 
+function getErrorMessage(input) {
+    return document.querySelector(`.popup__error[data-for="${input.name}"]`);
+}
+
 function checkInputValidity(input, type) {
     const form = input.closest('.popup__form');
     if(type === 'text') {
         if(input.validity.valueMissing) {
-            input.nextElementSibling.textContent = 'Это обязательное поле';
+            getErrorMessage(input).textContent = 'Это обязательное поле';
         } else if(input.validity.patternMismatch) {
-            input.nextElementSibling.textContent = 'Здесь должна быть ссылка';
+            getErrorMessage(input).textContent = 'Здесь должна быть ссылка';
         } else if(input.validity.tooShort || input.validity.tooLong) {
-            input.nextElementSibling.textContent = 'Должно быть от 2 до 30 символов';
+            getErrorMessage(input).textContent = 'Должно быть от 2 до 30 символов';
         } else if(input.validity.valid) {
-            input.nextElementSibling.textContent = '';
+            getErrorMessage(input).textContent = '';
         }
     }
     setSubmitButtonState(form);

@@ -41,11 +41,11 @@
                 <form class="popup__form" name="profile">
                     <div class="popup__row">
                         <input type="text" name="name" class="popup__input popup__input_type_name" minlength="2" maxlength="30" required placeholder="Имя">
-                        <span class="popup__error"></span>
+                        <span class="popup__error" data-for="name"></span>
                     </div>
                     <div class="popup__row">
                         <input type="text" name="about" class="popup__input popup__input_type_link-url" minlength="2" maxlength="30" required placeholder="О себе">
-                        <span class="popup__error"></span>
+                        <span class="popup__error" data-for="about"></span>
                     </div>
                     <button type="submit" class="button popup__button popup__button_edit" disabled>Сохранить</button>
                 </form>
@@ -58,11 +58,11 @@
                 <form class="popup__form" name="add">
                     <div class="popup__row">
                         <input type="text" name="calling" class="popup__input popup__input_type_name" minlength="2" maxlength="30" required placeholder="Название">
-                        <span class="popup__error"></span>
+                        <span class="popup__error" data-for="calling"></span>
                     </div>
                     <div class="popup__row">
                         <input type="text" name="link" class="popup__input popup__input_type_link-url" pattern="https?://.+" required placeholder="Ссылка на картинку">
-                        <span class="popup__error"></span>
+                        <span class="popup__error" data-for="link"></span>
                     </div>
                     <button type="submit" class="button popup__button popup__button_add-card">+</button>
                 </form>

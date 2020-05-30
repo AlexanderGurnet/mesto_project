@@ -1,75 +1,41 @@
 <!DOCTYPE html>
 <html lang="ru">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mesto</title>
-    <link rel="stylesheet" href="./pages/index.css">
-</head>
-
-<body>
-    <div class="root">
-        <header class="header root__section">
-            <img src="./images/logo.svg" alt="mesto logo" class="logo">
-        </header>
-        <div class="profile root__section">
-            <div class="user-info">
-                <div class="user-info__photo"></div>
-                <div class="user-info__data">
-                    <h1 class="user-info__name">Jaques Causteau</h1>
-                    <p class="user-info__job">Sailor, Researcher</p>
-                    <button class="button user-info__edit">Edit</button>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Mesto</title>
+        <link rel="stylesheet" href="./pages/index.css">
+    </head>    
+    <body>
+        <div class="root">
+            <header class="header root__section">
+                <img src="./images/logo.svg" alt="mesto logo" class="logo">
+            </header>
+            <div class="profile root__section">
+                <div class="user-info">
+                    <div class="user-info__photo"></div>
+                    <div class="user-info__data">
+                        <h1 class="user-info__name">Jaques Causteau</h1>
+                        <p class="user-info__job">Sailor, Researcher</p>
+                        <button class="button user-info__edit">Edit</button>
+                    </div>
+                    <button class="button user-info__button">+</button>
                 </div>
-                <button class="button user-info__button">+</button>
             </div>
-        </div>
-        <div class="places-list root__section">
-            <!-- Place for cards -->
+            <div class="places-list root__section"> 
+                <!-- Place for cards -->
+            </div>
             <div class="popup">
-                <div class="popup__img-content">
-                    <img class="popup__img" src="" alt="картинка">
-                    <img src="./images/close.svg" alt="" class="popup__close">
-                </div> 
+                <!-- Place for Popups-->
             </div>
         </div>
-        <div class="popup popup_edit">
-            <div class="popup__content">
-                <img src="./images/close.svg" alt="" class="popup__close">
-                <h3 class="popup__title">Редактировать профиль</h3>
-                <form class="popup__form" name="profile">
-                    <div class="popup__row">
-                        <input type="text" name="name" class="popup__input popup__input_type_name" minlength="2" maxlength="30" required placeholder="Имя">
-                        <span class="popup__error" data-for="name"></span>
-                    </div>
-                    <div class="popup__row">
-                        <input type="text" name="about" class="popup__input popup__input_type_link-url" minlength="2" maxlength="30" required placeholder="О себе">
-                        <span class="popup__error" data-for="about"></span>
-                    </div>
-                    <button type="submit" class="button popup__button popup__button_edit" disabled>Сохранить</button>
-                </form>
-            </div>
-        </div>
-        <div class="popup popup_add-card">
-            <div class="popup__content">
-                <img src="./images/close.svg" alt="" class="popup__close">
-                <h3 class="popup__title">Новое место</h3>
-                <form class="popup__form" name="add">
-                    <div class="popup__row">
-                        <input type="text" name="calling" class="popup__input popup__input_type_name" minlength="2" maxlength="30" required placeholder="Название">
-                        <span class="popup__error" data-for="calling"></span>
-                    </div>
-                    <div class="popup__row">
-                        <input type="text" name="link" class="popup__input popup__input_type_link-url" pattern="https?://.+" required placeholder="Ссылка на картинку">
-                        <span class="popup__error" data-for="link"></span>
-                    </div>
-                    <button type="submit" class="button popup__button popup__button_add-card">+</button>
-                </form>
-            </div>
-        </div>
-    </div>
-    <script src="script.js"></script>
-</body>
-
+        <script src="js/data/data.js"></script>
+        <script src="./js/classes/Card.js"></script>
+        <script src="./js/classes/UserInfo.js"></script>
+        <script src="./js/classes/CardList.js"></script>
+        <script src="./js/classes/Popup.js"></script>
+        <script src="./js/classes/FormValidator.js"></script>
+        <script src="script.js"></script>
+    </body>     
 </html>

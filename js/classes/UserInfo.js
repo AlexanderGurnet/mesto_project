@@ -1,7 +1,9 @@
 class UserInfo {
-  constructor(name, about) {
-    this._name = name;
-    this._about = about;
+  constructor(nameElem, aboutElem) {
+    this._name = nameElem.textContent;
+    this._about = aboutElem.textContent;
+    this._nameElem = nameElem;
+    this._aboutElem = aboutElem;
   }
 
   setUserInfo(objUserInfo) {
@@ -15,9 +17,9 @@ class UserInfo {
       about: this._about,
     }
   }
-  
+
   updateUserInfo() {
-    document.querySelector('.user-info__name').textContent = this._name;
-    document.querySelector('.user-info__job').textContent = this._about;
+    this._nameElem.textContent = this._name;
+    this._aboutElem.textContent = this._about;
   }
 }

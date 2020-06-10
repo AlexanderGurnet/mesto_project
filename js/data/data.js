@@ -46,7 +46,10 @@ const cardMarkup = `<div class="place-card">
               </div>
               <div class="place-card__description">
                   <h3 class="place-card__name"></h3>
-                  <button class="place-card__like-icon"></button>
+                  <div class="place-card__like-block">
+                      <button class="place-card__like-icon"></button>
+                      <span class="place-card__like-count"></span>
+                  </div>
               </div>
               </div>`; 
               
@@ -55,7 +58,7 @@ const imgPopupMarkup = `<div class="popup__img-content">
                       <img src="./images/close.svg" alt="" class="popup__close">
                   </div> `;
 
-const editPopupMarkup = `<div class="popup__content popup__content-edit">
+const editPopupMarkup = `<div class="popup__content popup__content_edit">
                       <img src="./images/close.svg" alt="" class="popup__close">
                       <h3 class="popup__title">Редактировать профиль</h3>
                       <form class="popup__form" name="profile" novalidate>
@@ -67,11 +70,11 @@ const editPopupMarkup = `<div class="popup__content popup__content-edit">
                               <input type="text" name="about" class="popup__input popup__input_type_about" minlength="2" maxlength="30" required placeholder="О себе">
                               <span class="popup__error" data-for="about"></span>
                           </div>
-                          <button type="submit" name="button" class="button popup__button popup__button_edit">Сохранить</button>
+                          <button type="submit" name="button" class="button popup__button popup__button_edit popup__button_font-size-s popup__button_profile">Сохранить</button>
                       </form>
                    </div>`;
 
-const addCardPopupMarkup = `<div class="popup__content popup__content-add-card">
+const addCardPopupMarkup = `<div class="popup__content popup__content_add-card">
                           <img src="./images/close.svg" alt="" class="popup__close">
                           <h3 class="popup__title">Новое место</h3>
                           <form class="popup__form" name="add" novalidate>
@@ -83,6 +86,27 @@ const addCardPopupMarkup = `<div class="popup__content popup__content-add-card">
                                   <input type="text" name="link" class="popup__input popup__input_type_link-url" pattern="https?://.+" required placeholder="Ссылка на картинку">
                                   <span class="popup__error" data-for="link"></span>
                               </div>
-                              <button type="submit" name="button" class="button popup__button popup__button_add-card" disabled>+</button>
+                              <button type="submit" name="button" class="button popup__button popup__button_add-card popup__button_font-size-s popup__button_card" disabled>+</button>
                           </form>
                       </div>`;
+
+const avatarPopupMarkup = `<div class="popup__content popup__content_avatar-change">
+                          <img src="./images/close.svg" alt="" class="popup__close">
+                          <h3 class="popup__title">Обновить аватар</h3>
+                          <form class="popup__form" name="changeAvatar" novalidate>
+                              <div class="popup__row">
+                                  <input type="text" name="link" class="popup__input popup__input_type_link-url" pattern="https?://.+" required placeholder="Ссылка на аватар">
+                                  <span class="popup__error" data-for="link"></span>
+                              </div>
+                              <button type="submit" name="button" class="button popup__button popup__button_edit popup__button_font-size-s popup__button_avatar" disabled>Сохранить</button>
+                          </form>
+                          </div>`;
+
+const options = {
+  baseUrl: 'https://praktikum.tk/cohort11',
+  cohort: 'cohort11',
+  headers: {
+    authorization: '5f2b8167-6f03-48e0-b24d-b12b34e7f55d',
+    'Content-Type': 'application/json',
+  }
+}
